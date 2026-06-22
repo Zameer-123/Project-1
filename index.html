@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Bug Explainer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>AI Bug Explainer</h1>
+    <form method="post" action="/analyze">
+        <textarea name="code" placeholder="Paste your Python code here..."></textarea><br>
+        <button type="submit">Analyze</button>
+    </form>
+    {% if error %}
+        <div class="output">
+            
+            
+            <h2>AI Explanation:</h2>
+            <p>{{ explanation }}</p>
+        </div>
+    {% endif %}
+</body>
+</html>
